@@ -3,10 +3,13 @@
 using namespace std;
 
 void dfs(int visited[], int index, int **arr, int n)
-{
+{  
+    // Đánh dấu đỉnh index đã được duyệt
     visited[index] = 1;
+
     for (int i = 0; i < n; i++)
-    {
+    {  
+        // Nếu có đường đi từ đỉnh index tới đỉnh i và đỉnh i chưa đươc duyệt
         if (arr[index][i] == 1 && index != i && visited[i] == 0)
         {
             dfs(visited, i, arr, n);
@@ -31,15 +34,20 @@ int main()
                 cin >> arr[i][j];
             }
         }
+
         for (int i = 0; i < n; i++)
         {
             int visited[n], first = 1;
+
             for (int j = 0; j < n; j++)
             {
                 visited[j] = 0;
             }
+
             dfs(visited, i, arr, n);
+
             printf("From%4d can visit: ", i);
+
             for (int j = 0; j < n; j++)
             {
                 if (j != i && visited[j] == 1)
@@ -52,15 +60,18 @@ int main()
                     {
                         printf(",");
                     }
+                    
                     printf("%3d", j);
                 }
             }
+
             if (first == 1)
             {
                 cout << "No vertex";
             }
             cout << endl;
         }
+
         cout << endl;
     }
 
