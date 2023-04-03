@@ -18,11 +18,14 @@ int main()
                 scanf("%d", &graph[i][j]);
             }
         }
-
+        
+        // Lặp theo hàng
         for (i = 0; i < n; i++)
         {
+            // Lặp theo cột
             for (j = 0; j < n; j++)
             {
+                // Nếu gặp khác nhau => break
                 if (graph[i][j] != graph[j][i])
                 {
                     directed = 1;

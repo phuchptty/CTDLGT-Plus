@@ -20,6 +20,7 @@ int main()
         set(a1, x);
         set(b1, x);
         int **a = (int **)malloc(n * sizeof(int *));
+
         for (int i = 0; i < n; i++)
         {
             a[i] = (int *)malloc(n * sizeof(int));
@@ -32,7 +33,9 @@ int main()
                 scanf("%d", &a[i][j]);
             }
         }
+
         int m = 0;
+
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
@@ -45,6 +48,7 @@ int main()
                 }
             }
         }
+
         for (int h = 0; h < m; h++)
         {
             if (h == m - 1)
@@ -54,6 +58,7 @@ int main()
             else
                 printf("(%d, %d), ", a1[h], b1[h]);
         }
+        
         printf("\n");
 
         for (int i = 0; i < n; i++)
