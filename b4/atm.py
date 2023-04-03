@@ -25,9 +25,9 @@ def atm_algorithm(w,c):
                 # Example 5000 x 10^c
                 tmp = menh_gia[k] * 10**j
 
-                paper_needed = money // tmp
+                paper_needed = money // tmp #với mệnh giá này thì chả cho khách nhiều nhất bao nhiêu tờ
 
-                count += paper_needed
+                count += paper_needed #cộng số tờ đã tính đc
                 
                 # Trong trường hợp số tiền không chia hết thì thêm 1 tờ
                 if paper_needed != 0:

@@ -1,20 +1,19 @@
 import sys
 
-# Define the TSP greedy algorithm
 def tsp_greedy(distances):
-    # Get the number of cities
+    # lấy số thành phố
     n = len(distances)
     
-    # Initialize the list of visited cities and mark the first city as visited
+    # khởi tạo danh sách các thành phố và đánh dấu thành phố đầu tiên là đã đi qua
     visited = [False] * n
     visited[0] = True
     
-    # Set the current city to the first city and the total distance traveled to zero
+    # đặt thành phố hiện tại là thành phố đầu tiên và tổng khoảng cách = 0
     curr_city = 0
     total_distance = 0
     path = ["1"]
 
-    # Loop over the remaining n-1 cities and find the closest unvisited city to the current city
+    # Loop qua các thành phố còn lại và tìm thành phố có khoảng cách ngắn nhất với thành phố hiện tại
     for i in range(n-1):
         next_city = -1
         min_distance = sys.maxsize
