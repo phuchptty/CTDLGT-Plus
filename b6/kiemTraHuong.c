@@ -20,6 +20,10 @@ int main()
         }
         
         // Lặp theo hàng
+
+        // đồ thị có hướng tức là chỉ cần có hai đỉnh có hướng
+        // tức là từ đỉnh A -> B được nhưng B -> A thì không được
+        // -> xét mảng 2 chiều nếu A[i][j] và A[j][i] khác nhau thì tức là có hướng
         for (i = 0; i < n; i++)
         {
             // Lặp theo cột

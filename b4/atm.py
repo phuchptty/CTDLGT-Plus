@@ -5,9 +5,9 @@ def atm_algorithm(w,c):
     # initialize variables
     menh_gia = [1000, 2000, 3000, 5000]
 
-    # loop through each input value
+    # với mỗi test case
     for i in range(num_testcases):
-        # check if input value is divisible by 1000
+        # kiểm tra có chia hết cho 1000 hay không, nếu không, thì dừng testcase và in ra 0 luôn
         if w[i] % 1000 != 0:
             print("0")
             continue
@@ -18,7 +18,7 @@ def atm_algorithm(w,c):
         
         # lặp từ dưới lên tìm mệnh giá to nhất
         for j in range(c[i], -1, -1):
-            arrtmp = [0, 0, 0, 0]
+            arrtmp = [0, 0, 0, 0] #mảng để xét các trường hợp đặc biệt có nhiều hơn 1 cách chia
             
             # loop through each possible bill value
             for k in range(len(menh_gia) - 1, -1, -1):
@@ -36,12 +36,12 @@ def atm_algorithm(w,c):
                 # update số tiền mới sau khi chia
                 money %= tmp
             
-            # update l based on which bills were used
-            if arrtmp[3] == 1 and arrtmp[2] == 1 and arrtmp[0] == 1:
+            # cập nhật l dựa trên số tiền sự dụng tại hàng 10^j
+            if arrtmp[3] == 1 and arrtmp[2] == 1 and arrtmp[0] == 1: #9
                 l *= 3
-            elif arrtmp[3] == 1 and arrtmp[0] == 1:
+            elif arrtmp[3] == 1 and arrtmp[0] == 1: #6
                 l *= 2
-            elif arrtmp[3] == 0 and arrtmp[2] == 1 and arrtmp[0] == 1:
+            elif arrtmp[3] == 0 and arrtmp[2] == 1 and arrtmp[0] == 1: #4
                 l *= 2
         
         # print the result for this input value
