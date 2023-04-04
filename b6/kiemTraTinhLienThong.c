@@ -9,6 +9,7 @@ int visited[MAX_N];
 void dfs(int u)
 {
     visited[u] = 1;
+    
     for (int v = 0; v < n; v++)
     {
         if (a[u][v] && !visited[v])
