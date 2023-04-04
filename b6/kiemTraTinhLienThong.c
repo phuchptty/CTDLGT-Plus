@@ -8,10 +8,12 @@ int visited[MAX_N];
 
 void dfs(int u)
 {
+    // Đánh dấu đỉnh u đã được duyệt
     visited[u] = 1;
-    
+
     for (int v = 0; v < n; v++)
     {
+        // Nếu có đường đi từ đỉnh u tới v và đỉnh v chưa đươc duyệt
         if (a[u][v] && !visited[v])
         {
             dfs(v);

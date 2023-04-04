@@ -59,7 +59,7 @@ int main()
         printf("jmax=n+1=%d+1=%d\n", n, n + 1);
         
         for(int j = i + 1; j <= n + 1; j++) {
-            // Nếu ở đàu hoặc cuối dãy hoặc giá trị A đầu lớn hơn A cuối đồng thời L phải lớn hơn L max
+            // Nếu ở đàu hoặc cuối dãy hoặc giá trị A đầu lớn hơn A cuối đồng thời L phải lớn hơn L max. Chọn dãy dài nhất để đảm bảo tính tăng dần
             if( ((i == 0 || j == n + 1) || A[j] > A[i]) && L[j] > L[jmax]) {
                 printf("i=%d,j=%d,jmax=%d,a[%d]>a[%d] &&L[%d]>L[%d]:\n", i, j, jmax, j, i, j, jmax);
                 jmax = j;
